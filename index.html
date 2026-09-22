@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Death Stranding 2: On The Beach — Order Checklist</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;600;700&family=IBM+Plex+Sans:ital,wght@0,400;0,500;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--void:#06080b;--panel:#0e1318;--panel-2:#141b22;--line:#243039;--line-soft:#1a232b;
+--paper:#dbe4e8;--paper-dim:#7d8f99;--chiral:#7fd4d8;--chiral-lit:#a9eef1;--amber:#e0a458;--tar:#4b5a63;--jade:#6f9a86}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--void);color:var(--paper);font-family:"IBM Plex Sans",system-ui,sans-serif;font-size:16.5px;line-height:1.6;
+background-image:radial-gradient(ellipse 75% 45% at 50% -8%,rgba(127,212,216,.12),transparent 62%)}
+a{color:var(--chiral);text-decoration:none;border-bottom:1px dotted rgba(127,212,216,.4)}
+a:hover{color:var(--chiral-lit)}
+:focus-visible{outline:2px solid var(--chiral);outline-offset:2px}
+.wrap{display:grid;grid-template-columns:290px 1fr;max-width:1420px;margin:0 auto}
+main{min-width:0;padding:2.4rem 3rem 6rem;border-left:1px solid var(--line-soft)}
+#sidebar{position:sticky;top:0;align-self:start;height:100vh;overflow-y:auto;padding:1.7rem 1.15rem 2rem;scrollbar-width:thin;scrollbar-color:var(--line) transparent}
+#sidebar h1{font-family:"Chakra Petch",sans-serif;font-weight:700;font-size:1rem;letter-spacing:.12em;text-transform:uppercase;color:var(--chiral);line-height:1.35}
+#sidebar .sub{font-family:"IBM Plex Mono",monospace;font-size:.57rem;letter-spacing:.2em;text-transform:uppercase;color:var(--paper-dim);margin-bottom:1.3rem}
+#overall .track{height:5px;background:var(--panel-2);border:1px solid var(--line)}
+#overall .fill{height:100%;width:0;background:linear-gradient(90deg,var(--chiral),var(--chiral-lit));transition:width .4s;box-shadow:0 0 10px rgba(127,212,216,.5)}
+#overall .num{font-family:"IBM Plex Mono",monospace;font-size:.66rem;color:var(--paper-dim);margin:.4rem 0 1rem;letter-spacing:.06em}
+#search{width:100%;background:var(--panel);border:1px solid var(--line);color:var(--paper);font-family:"IBM Plex Sans",sans-serif;font-size:.9rem;padding:.45rem .6rem;margin-bottom:1rem}
+#search::placeholder{color:var(--paper-dim)}
+#toc{list-style:none}
+#toc a{display:flex;align-items:baseline;gap:.5rem;padding:.3rem .35rem;border-bottom:none;color:var(--paper-dim);font-size:.87rem;line-height:1.25}
+#toc a:hover{color:var(--paper);background:var(--panel)}
+#toc .p{margin-left:auto;font-family:"IBM Plex Mono",monospace;font-size:.58rem}
+#toc .done .p{color:var(--jade)}
+.side-actions{margin-top:1.3rem;display:flex;flex-direction:column;gap:.45rem}
+.side-actions button,label.toggle{font-family:"IBM Plex Mono",monospace;font-size:.6rem;letter-spacing:.13em;text-transform:uppercase;background:transparent;border:1px solid var(--line);color:var(--paper-dim);padding:.5rem .6rem;cursor:pointer;text-align:left;display:flex;align-items:center;gap:.5rem}
+.side-actions button:hover,label.toggle:hover{border-color:var(--chiral);color:var(--chiral)}
+label.toggle input{accent-color:var(--chiral)}
+#menu-btn{display:none;position:fixed;left:.75rem;bottom:.75rem;z-index:40;background:var(--panel);border:1px solid var(--chiral);color:var(--chiral);font-family:"IBM Plex Mono",monospace;font-size:.65rem;letter-spacing:.14em;text-transform:uppercase;padding:.7rem .95rem;cursor:pointer;box-shadow:0 4px 18px rgba(0,0,0,.65)}
+#scrim{display:none;position:fixed;inset:0;background:rgba(0,0,0,.62);z-index:30}
+#intro{margin-bottom:2.4rem;max-width:64ch}
+#intro h2{font-family:"Chakra Petch",sans-serif;font-size:1.85rem;font-weight:700;color:var(--paper);line-height:1.2;margin-bottom:.5rem;letter-spacing:.01em}
+#intro p{color:var(--paper-dim);font-size:.97rem}
+.area{margin-bottom:1.8rem;border:1px solid var(--line-soft);background:var(--panel)}
+.area-head{display:grid;grid-template-columns:auto 1fr auto;gap:.4rem 1.2rem;align-items:center;padding:.95rem 1.25rem;cursor:pointer;user-select:none}
+.area-head:hover{background:var(--panel-2)}
+.area-head .chev{font-family:"IBM Plex Mono",monospace;color:var(--chiral);font-size:.78rem;transform:rotate(90deg);transition:transform .25s}
+.area.collapsed .area-head .chev{transform:rotate(0)}
+.eyebrow{font-family:"IBM Plex Mono",monospace;font-size:.55rem;letter-spacing:.26em;text-transform:uppercase;color:var(--paper-dim)}
+.area-head h2{font-family:"Chakra Petch",sans-serif;font-size:1.22rem;font-weight:700;line-height:1.3;color:var(--paper);letter-spacing:.01em}
+.area-meta{display:flex;flex-direction:column;gap:.32rem;align-items:flex-end}
+.tags{display:flex;gap:.4rem;flex-wrap:wrap;justify-content:flex-end}
+.tag{font-family:"IBM Plex Mono",monospace;font-size:.56rem;letter-spacing:.09em;text-transform:uppercase;border:1px solid var(--line);color:var(--paper-dim);padding:.16rem .45rem}
+.tag.count{color:var(--chiral);border-color:rgba(127,212,216,.4)}
+.aprog{display:flex;align-items:center;gap:.5rem;min-width:150px}
+.aprog .track{flex:1;height:4px;background:var(--void);border:1px solid var(--line)}
+.aprog .fill{height:100%;width:0;background:var(--jade);transition:width .35s}
+.area.area-complete .aprog .fill{background:var(--chiral-lit);box-shadow:0 0 8px rgba(127,212,216,.6)}
+.aprog .num{font-family:"IBM Plex Mono",monospace;font-size:.6rem;color:var(--paper-dim);min-width:2.6rem;text-align:right}
+.area-body{padding:.9rem 1.3rem 1.3rem;border-top:1px solid var(--line-soft)}
+.area.collapsed .area-body{display:none}
+.ep-note{color:var(--paper-dim);font-style:italic;padding:.3rem 0 .2rem}
+.orders{list-style:none;display:flex;flex-direction:column;gap:.7rem}
+.check-item{border:1px solid var(--line-soft);background:var(--panel-2);padding:.75rem .9rem .8rem 2.6rem;position:relative;transition:border-color .2s}
+.check-item:hover{border-color:var(--line)}
+.check-item input{position:absolute;opacity:0;width:0;height:0}
+.node{position:absolute;left:.85rem;top:.95rem;width:16px;height:16px;border-radius:50%;border:1.5px solid var(--paper-dim);cursor:pointer;transition:all .22s}
+.node::after{content:"";position:absolute;inset:3px;border-radius:50%;background:var(--chiral-lit);opacity:0;transform:scale(.3);transition:all .22s}
+.check-item input:checked+.node{border-color:var(--chiral);box-shadow:0 0 11px rgba(127,212,216,.55)}
+.check-item input:checked+.node::after{opacity:1;transform:scale(1)}
+.check-item input:focus-visible+.node{outline:2px solid var(--chiral);outline-offset:3px}
+.onum{display:block;font-family:"IBM Plex Mono",monospace;font-size:.57rem;letter-spacing:.2em;text-transform:uppercase;color:var(--chiral);cursor:pointer}
+.otitle{display:block;font-family:"Chakra Petch",sans-serif;font-weight:600;font-size:1.02rem;line-height:1.35;color:var(--paper);cursor:pointer;margin-bottom:.45rem}
+.check-item.checked{opacity:.58}
+.check-item.checked .otitle{color:var(--paper-dim);text-decoration:line-through;text-decoration-color:var(--tar)}
+.check-item.checked .onum{color:var(--tar)}
+.odetail{display:flex;flex-direction:column;gap:.3rem}
+.row{display:grid;grid-template-columns:5.2rem 1fr;gap:.7rem;align-items:baseline}
+.lbl{font-family:"IBM Plex Mono",monospace;font-size:.55rem;letter-spacing:.16em;text-transform:uppercase;color:var(--paper-dim);padding-top:.25em}
+.val{font-size:.93rem;color:#c3cfd5}
+.val.unlocks{color:var(--amber)}
+.val.unlocks.na{color:var(--tar)}
+.mod{font-family:"IBM Plex Mono",monospace;font-size:.82em;color:var(--amber);letter-spacing:.04em}
+.order-note{grid-column:1/-1;font-size:.88rem;color:var(--paper-dim);font-style:italic;border-left:2px solid var(--line);padding-left:.7rem;margin-top:.15rem}
+body.hide-done .check-item.checked{display:none}
+.check-item.search-hide{display:none!important}
+.area.search-empty{display:none}
+#jump{position:fixed;right:1rem;bottom:1rem;z-index:20;background:var(--panel);border:1px solid var(--line);color:var(--paper-dim);font-family:"IBM Plex Mono",monospace;font-size:.6rem;letter-spacing:.13em;text-transform:uppercase;padding:.6rem .8rem;cursor:pointer}
+#jump:hover{border-color:var(--chiral);color:var(--chiral)}
+.flash{animation:flash 1.4s ease-out}
+@keyframes flash{0%,40%{background:rgba(127,212,216,.16)}100%{background:var(--panel-2)}}
+dialog{background:var(--panel);color:var(--paper);border:1px solid var(--chiral);max-width:min(560px,92vw);padding:1.3rem}
+dialog::backdrop{background:rgba(0,0,0,.75)}
+dialog h3{font-family:"Chakra Petch",sans-serif;margin-bottom:.5rem;color:var(--chiral)}
+dialog textarea{width:100%;height:110px;background:var(--void);color:var(--paper);border:1px solid var(--line);font-family:"IBM Plex Mono",monospace;font-size:.7rem;padding:.5rem;margin:.6rem 0}
+dialog .row{display:flex;gap:.5rem;flex-wrap:wrap}
+dialog button{font-family:"IBM Plex Mono",monospace;font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;background:transparent;border:1px solid var(--line);color:var(--paper-dim);padding:.5rem .8rem;cursor:pointer}
+dialog button:hover{border-color:var(--chiral);color:var(--chiral)}
+footer{margin-top:3.2rem;color:var(--paper-dim);font-family:"IBM Plex Mono",monospace;font-size:.65rem;letter-spacing:.05em}
+@media(max-width:900px){
+ .wrap{grid-template-columns:1fr}
+ main{padding:1.1rem .9rem 5.5rem;border-left:none}
+ #menu-btn{display:block}
+ #sidebar{position:fixed;z-index:35;left:0;top:0;bottom:0;width:min(300px,86vw);background:var(--panel);border-right:1px solid var(--line);transform:translateX(-102%);transition:transform .25s;height:100%}
+ body.nav-open #sidebar{transform:none}
+ body.nav-open #scrim{display:block}
+ .area-head{grid-template-columns:auto 1fr;padding:.8rem .85rem}
+ .area-meta{grid-column:1/-1;align-items:flex-start}
+ .tags{justify-content:flex-start}
+ .aprog{min-width:0;width:100%}
+ .area-body{padding:.7rem .85rem 1.1rem}
+ .row{grid-template-columns:1fr;gap:.1rem}
+ .lbl{padding-top:.3rem}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<button id="menu-btn" aria-label="Open episode menu">☰ Episodes</button>
+<div id="scrim"></div>
+<div class="wrap">
+<nav id="sidebar" aria-label="Episodes and controls">
+  <h1>Death Stranding 2</h1>
+  <div class="sub">On The Beach · Orders</div>
+  <div id="overall">
+    <div class="track"><div class="fill" id="overall-fill"></div></div>
+    <div class="num" id="overall-num">0 / 0 · 0%</div>
+  </div>
+  <input id="search" type="search" placeholder="Search orders…" aria-label="Search the orders">
+  <ol id="toc"></ol>
+  <div class="side-actions">
+    <label class="toggle"><input type="checkbox" id="hide-done"> Hide completed</label>
+    <button id="expand-all">Expand all</button>
+    <button id="collapse-all">Collapse all</button>
+    <button id="save-code">Export / import</button>
+    <button id="reset-all">Reset progress</button>
+  </div>
+</nav>
+<main>
+<div id="intro">
+  <h2>Keep on keeping on</h2>
+  <p>Every main Order across all 17 Episodes, with its objective, tips and unlocks. Tick each Order as it completes. Progress saves in your browser.</p>
+</div>
+<section class="area" id="e01">
+<div class="area-head"><span class="chev">&#10095;</span>
+<div class="titles"><div class="eyebrow">Episode</div><h2>Episode 1: Sam</h2></div>
+<div class="area-meta"><div class="tags"><span class="tag">Orders 1–7</span><span class="tag count">7</span></div><div class="aprog"><div class="track"><div class="fill"></div></div><span class="num">0/0</span></div></div></div>
+<div class="area-body">
+<ol class="orders">
+<li><span class="onum">Order 01</span><span class="otitle">Return home with Lou</span><div class="odetail"><div class="row"><span class="lbl">Objective</span><span class="val">Return to Sam and Lou&#x27;s home by walking along the mountain ridges.</span></div><div class="row"><span class="lbl">Tips</span><span class="val">This is the tutorial for the game&#x27;s movement, camera and tool controls. When it comes to getting to Sam and Lou&#x27;s home, it&#x27;s best to stay atop the mountain ridges as it will help prevent Sam from falling. Make sure you stand still during the gate quake, which occurs when you&#x27;re roughly 800 metres from their home, and use the targeting system to find safe ground.</span></div><div class="row"><span class="lbl">Unlocks</span><span class="val unlocks na">N/A</span></div><p class="order-note">We&#x27;ve taken a look at what happens if you select the &#x27;I won&#x27;t do it&#x27; choice.</p></div></li>
+<li><span class="onum">Order 02</span><span class="otitle">Deliver the Chiral Network Gateway to C1</span><div class="odetail"><div class="row"><span class="lbl">Objective</span><span class="val">Deliver the Chiral Network, weighs 35 kg, to the C1 city south of Sam and Lou&#x27;s home. Involves passing a bandit camp and a river.</span></div><div class="row"><span class="lbl">Tips</span><span class="val">The bandit camp can be avoided by walking south-east around it. Though we still recommend using stealth to avoid being spotted! It&#x27;s best to take the broken side of the bridge as you can make your way across by climbing from one car to another. A sandstorm will roll in, but you can stay on target by following your route or by using L1 to keep your target on C1. The final river can be swam across or you can use a ladder.</span></div><div class="row"><span class="lbl">Unlocks</span><span class="val unlocks">252 Likes.</span></div></div></li>
+<li><span class="onum">Order 03</span><span class="otitle">Deliver one or more Remote Medical Units to Villa Libre</span><div class="odetail"><div class="row"><span class="lbl">Objective</span><span class="val">Deliver at least one Remote Medical Unit, weighs 20kg (40kg if taking two), to Villa Libre. Located north-west of C1. Involves travelling past bandit camp to the west and deep river to the east. Timefall, corrosive rain, will fall.</span></div><div class="row"><span class="lbl">Tips</span><span class="val">It&#x27;s worth bringing Container Repair Spray with you to repair your cargo from the corrosive effects of Timefall. If you want to avoid the bandit camp, be prepared to cross the deep river twice. Going through the bandit camp will most likely involve combat if you&#x27;re not lucky with stealth. Avoiding both involves travelling through mountainous terrain. Whatever route you take, it&#x27;s a good idea to stop by the Postbox for extra supplies and, if you&#x27;re playing online, benefit from the supplies left by other players.</span></div><div class="row"><span class="lbl">Unlocks</span><span class="val unlocks">262 Likes as base reward, with 100 Additional Likes for delivering two containers and having average contents damage 5% or less.</span></div></div></li>
+<li><span class="onum">Order 04</span><span class="otitle">Recover all Chiral Density Gauges stolen by bandits</span><div class="odetail"><div class="row"><span class="lbl">Objective</span><span class="val">Retrieve the two stolen Chiral Density Gauges from the bandit camp and take them to the C1 South Distribution Center.</span></div><div class="row"><span class="lbl">Tips</span><span class="val">You&#x27;ll most likely have to engage in some combat here, so bring weapons, Blood Bags and at least one PCC. If you prefer stealth, then it&#x27;s best to wait till night falls and build a Watchtower so you can tag any enemy from a distance. It&#x27;s best to head directly south from Villa Libre to the bandit camp. Make sure you run away from any of the spider monsters if they start chasing Sam!</span></div><div class="row"><span class="lbl">Unlocks</span><span class="val unlocks">Unlocks Blood Grenade Lvl 1 and Timefall Shelter. 242 Likes as base reward, with 320 Additional Likes for average container damage 5% or less.</span></div><p class="order-note">We&#x27;ve got a guide covering the stolen Chiral Density Gauges locations if you&#x27;d like to learn more.</p></div></li>
+<li><span class="onum">Order 05</span><span class="otitle">Defeat the BTs near the former geophysics lab and deliver the Prototype MP bullets</span><div class="odetail"><div class="row"><span class="lbl">Objective</span><span class="val">Defeat BTs west of C1 and deliver prototype bullets to the lab south of where you fight the BTs (southwest of C1).</span></div><div class="row"><span class="lbl">Tips</span><span class="val">The BTs must be defeated with Blood Grenades, so make sure you bring those along. We also recommend bringing extra Blood Bags and a PCC if you want to build a Timefall Shelter before fighting the BTs. Reaching the lab involves either a longer, but smoother, route or climbing some steep cliffs, so it&#x27;s best to avoid bringing any heavy cargo with you.</span></div><div class="row"><span class="lbl">Unlocks</span><span class="val unlocks">Unlocks Anti-BT Effect for MP Bullets. 300 Likes as base reward, with 570 Additional Likes for content damage 5% or less.</span></div></div></li>
+<li><span class="onum">Order 06</span><span class="otitle">Defeat the Giant BT</span><div class="odetail"><div class="row"><span class="lbl">Objective</span><span class="val">Defeat the Giant BT.</span></div><div class="row"><span class="lbl">Tips</span><span class="val">The fight will begin the moment you leave the lab, so you must ensure you&#x27;re prepared before leaving. We recommend the Assault Rifle for this fight and make some Assault Rifles MP bullets. You&#x27;ll also want to bring Blood Bags and Blood Grenades.</span></div><div class="row"><span class="lbl">Unlocks</span><span class="val unlocks">520 Likes as base reward, with 100 Additional Likes for Sam damage 150% or less.</span></div></div></li>
+<li><span class="onum">Order 07</span><span class="otitle">Deliver the present for Lou</span><div class="odetail"><div class="row"><span class="lbl">Objective</span><span class="val">Return to Sam&#x27;s home and deliver Lou&#x27;s Present, weighs 1.2kg.</span></div><div class="row"><span class="lbl">Tips</span><span class="val">Since this order requires you to backtrack all the way to where you began the game, it&#x27;s a good idea to get a vehicle. You&#x27;ll still have to use it carefully, but it will save a lot of time. We recommend heading to C1 first, so you can restock if needed. It&#x27;s a good idea to avoid fighting the Ghost Mechs after you&#x27;ve crossed the river.</span></div><div class="row"><span class="lbl">Unlocks</span><span class="val unlocks na">N/A</span></div></div></li>
+</ol>
+</div></section>
+
+<section class="area" id="e02">
+<div class="area-head"><span class="chev">&#10095;</span>
+<div class="titles"><div class="eyebrow">Episode</div><h2>Episode 2: Lou</h2></div>
+<div class="area-meta"><div class="tags"><span class="tag">No orders</span></div><div class="aprog"><div class="track"><div class="fill"></div></div><span class="num">0/0</span></div></div></div>
+<div class="area-body">
+<p class="ep-note">This Episode doesn&#x27;t have any Orders. Sit back and enjoy!</p>
+</div></section>
+
+<section class="area" id="e03">
+<div class="area-head"><span class="chev">&#10095;</span>
+<div class="titles"><div class="eyebrow">Episode</div><h2>Episode 3: Drawbridge</h2></div>
+<div class="area-meta"><div class="tags"><span class="tag">Orders 8–14</span><span class="tag count">7</span></div><div class="aprog"><div class="track"><div class="fill"></div></div><span class="num">0/0</span></div></div></div>
+<div class="area-body">
+<ol class="orders">
+<li><span class="onum">Order 08</span><span class="otitle">Connect the Australian Plate Gate Terminal to the Chiral Network</span><div class="odetail"><div class="row"><span class="lbl">Objective</span><span class="val">Collect Mexican Plate Gate 900 metres away from Former Geophysics Lab.</span></div><div class="row"><span class="lbl">Tips</span><span class="val">This is a relatively straight forward order. It can be sped up by bringing a vehicle and it&#x27;s also a good idea to bring some Blood Bags and a weapon. You can easily reach your destination by taking a southwest path from the lab. Later on try to avoid the tar pits or else they will slow you down. (No BTs though!)</span></div><div class="row"><span class="lbl">Unlocks</span><span class="val unlocks">275 Likes (includes Additional Likes)</span></div></div></li>
+<li><span class="onum">Order 09</span><span class="otitle">Deliver the Chiral Decontaminator to the government&#x27;s base</span><div class="odetail"><div class="row"><span class="lbl">Objective</span><span class="val">Deliver Chiral Decontaminator, weighs 52kg, to the government&#x27;s base.</span></div><div class="row"><span class="lbl">Tips</span><span class="val">You have to pass through an area containing BTs as part of this delivery. You can either bring weapons to combat them or use the scanner to hopefully avoid them. Either way, bring blood bags. There&#x27;s a deep river just before the base, which can not be crossed ● using a vehicle. The river is shallowest roughly south of the base.</span></div><div class="row"><span class="lbl">Unlocks</span><span class="val unlocks">Unlocks Bola Gun, Motion Scanner for Odradek and new Backpack Attachments. 20 APAS Memory Enhancement Points. 240 Likes.</span></div></div></li>
+<li><span class="onum">Order 10</span><span class="otitle"><span class="mod">[Elimination]</span> Liberate the Western Environmental Observatory from the brigands</span><div class="odetail"><div class="row"><span class="lbl">Objective</span><span class="val">Kill all of the brigands in the Western Environmental Observatory.</span></div><div class="row"><span class="lbl">Tips</span><span class="val">We recommend bringing Blood Bags, Assault Rifles (you&#x27;ll most likely need more than one) and grenades for this order. Try your best to tag as many enemies as possible using the scanner before beginning your elimination as this will help you keep track of them. If you can, take care of the brigand in the watchtower first or else you&#x27;ll have to deal with a spotlight roaming the base.</span></div><div class="row"><span class="lbl">Unlocks</span><span class="val unlocks">Unlocks Battle Skeleton Lvl 1, Grenade Pistol and MP Grenade. 20 APAS Enhancement Points. 240 Likes as a base reward, with 410 Additional Likes for Sam Damage 100% damage or less.</span></div></div></li>
+<li><span class="onum">Order 11</span><span class="otitle">Destroy the Communications Disrupter and deliver the Mysterious Recording to the</span><div class="odetail"><div class="row"><span class="lbl">Objective</span><span class="val">Defeat the brigands at the Western Environmental Observatory (628 metres from current location) and deliver the Mysterious Recording, weighs 23kg, to The Musician (1058 metres from observatory).</span></div><div class="row"><span class="lbl">Tips</span><span class="val">Bring Blood Bags, weapons and wear the Battle Skeleton for this order. Ideally, you should bring Assault Rifles and the Tranq Sniper Rifle if you&#x27;ve completed Sub-Order 100. Due to the landscape, stealth will be difficult so make sure you take out the enemy in the watchtower first. You can, however, simply sneak in and destroy the Communications Disrupter if you&#x27;d prefer to avoid conflict.</span></div><div class="row"><span class="lbl">Unlocks</span><span class="val unlocks">Unlocks Shotgun MP. 20 APAS Memory Enhancement Points. 242 Likes as base reward, with 646 Additional Likes for content damage 5% or less.</span></div><p class="order-note">musician</p></div></li>
+<li><span class="onum">Order 12</span><span class="otitle">Investigate the unusual tar currents near F1</span><div class="odetail"><div class="row"><span class="lbl">Objective</span><span class="val">Travel to F1 (1250 metres away) and defeat the mech boss.</span></div><div class="row"><span class="lbl">Tips</span><span class="val">Assault Rifles MP, equipped Battle Skeleton and Blood Grenades are useful for this order. You will have to cross a deep river, which can be too deep for vehicles to cross in places. If you don&#x27;t want to swim, head further south to see if it&#x27;s narrower (unless it&#x27;s rained). We got a guide covering how to defeat the Order 12 boss.</span></div><div class="row"><span class="lbl">Unlocks</span><span class="val unlocks">Unlocks Floating Carrier Lvl 1. 20 APAS Memory Enhancement Points. 862 Likes as base reward, with 100 Additional Likes for Sam damage 100% or less.</span></div><p class="order-note">The first form of fast travel will also be unlocked after completing this order.</p></div></li>
+<li><span class="onum">Order 13</span><span class="otitle">Restore the monorail and deliver Special Alloys <span class="mod">[4800]</span></span><div class="odetail"><div class="row"><span class="lbl">Objective</span><span class="val">Deliver Special Alloys 480 (48kg), Special Alloys 240 (24kg), Resins 320 (32kg) and 2,000 Chiral Crystals to the mine 1,244 metres northeast of F1.</span></div><div class="row"><span class="lbl">Tips</span><span class="val">You need 2,000 Chiral Crystals for this order. If you don&#x27;t have already visit our how to get Chiral Crystals guide and make sure you check around the mine entrance. Due to the combined weight of this order, you must use a vehicle or less you&#x27;ll find it incredibly difficult to carry everything by yourself. Watch out for the chiral monsters when you reach the tar and consider going around this area.</span></div><div class="row"><span class="lbl">Unlocks</span><span class="val unlocks">Unlocks Pickup Off-Roader and Battery Unit Lvl 1 (Two Stars). 15 APAS Memory Enhancement Points. 400 Bandwidth. 240 Likes as base reward, 105 Additional Likes for mine restoration and 4,800 materials delivered.</span></div></div></li>
+<li><span class="onum">Order 14</span><span class="otitle">Deliver all Terraforming Equipment to Rainbow Valley</span><div class="odetail"><div class="row"><span class="lbl">Objective</span><span class="val">Deliver Terraforming Equipment (total combined weight 120kg) to Rainbow Valley 1,300 metres away. Afterwards travel an additional 200 metres.</span></div><div class="row"><span class="lbl">Tips</span><span class="val">It&#x27;s a good idea to use the Pick Off-Roader for this order as the combined weight of the deliveries is close to the maximum Sam can carry. You will need to build a bridge to cross the river. Do your best to avoid the BTs afterwards, only engaging in combat if necessary.</span></div><div class="row"><span class="lbl">Unlocks</span><span class="val unlocks">Unlocks Tar Cannon. 20 APAS Memory Enhancement Points. 272 Likes as a base reward, with 100 Additional Likes if content damage 5% or less.</span></div></div></li>
+</ol>
+</div></section>
+
+<section class="area" id="e04">
+<div class="area-head"><span class="chev">&#10095;</span>
+<div class="titles"><div class="eyebrow">Episode</div><h2>Episode 4 Raindrops</h2></div>
+<div class="area-meta"><div class="tags"><span class="tag">Orders 15–16</span><span class="tag count">2</span></div><div class="aprog"><div class="track"><div class="fill"></div></div><span class="num">0/0</span></div></div></div>
+<div class="area-body">
+<ol class="orders">
+<li><span class="onum">Order 15</span><span class="otitle">Deliver the Test Subject Kangaroos to the Animal Shelter</span><div class="odetail"><div class="row"><span class="lbl">Objective</span><span class="val">Order must be completed within 30 minutes or less. Involves capturing the kangaroo 542 metres northwest of Rainbow Valley and delivering it to the Animal Shelter 500 metres northwest of kangaroo.</span></div><div class="row"><span class="lbl">Tips</span><span class="val">Due to the time limit, using a vehicle is recommended for this order. Try to avoid the fire after crossing the river and use Blood Bags to restore health if needed. It&#x27;s worth slowing down once you have the kangaroo to avoid hurting it.</span></div><div class="row"><span class="lbl">Unlocks</span><span class="val unlocks">Unlocks Decoy Hologrenade, Story of Rainy Song and Amekara Niijie Song. 20 APAS Memory Enhancement Points. 260 Likes as a base reward, with 255 Additional Likes if kangaroo damage 5% or less.</span></div></div></li>
+<li><span class="onum">Order 16</span><span class="otitle">Deliver all Aid Packages to the Northern Environmental Observatory</span><div class="odetail"><div class="row"><span class="lbl">Objective</span><span class="val">Deliver every Aid Package (240kg combined weight) to the Northern Environmental Observatory 3,000 metres away.</span></div><div class="row"><span class="lbl">Tips</span><span class="val">It&#x27;s a good idea to fast travel to the F1 delivery terminal first to speed up this mission slightly. You&#x27;ll want to use the Pickup Off-Roader when delivering the Aid Packages due to the weight. We also recommend bringing along weapons and Blood Bags. Avoid boosting your vehicles during this journey and make sure you avoid the bandit camp completely.</span></div><div class="row"><span class="lbl">Unlocks</span><span class="val unlocks">Porter Suit: Squares, Blood Boomerang, Woods Song. 20 APAS Memory Enhancement Points. 500 Likes as a base reward, with 100 Additional Likes for 5% or less average cargo damage.</span></div></div></li>
+</ol>
+</div></section>
+
+<section class="area" id="e05">
+<div class="area-head"><span class="chev">&#10095;</span>
+<div class="titles"><div class="eyebrow">Episode</div><h2>Episode 5 Conflagration</h2></div>
+<div class="area-meta"><div class="tags"><span class="tag">Order 17</span><span class="tag count">1</span></div><div class="aprog"><div class="track"><div class="fill"></div></div><span class="num">0/0</span></div></div></div>
+<div class="area-body">
+<ol class="orders">
+<li><span class="onum">Order 17</span><span class="otitle">Escape the Strange Realm</span><div class="odetail"><div class="row"><span class="lbl">Objective</span><span class="val">Travel 275 metres northwest of the Northern Environmental Observatory before defeating the Mysterious Man.</span></div><div class="row"><span class="lbl">Tips</span><span class="val">We recommend bringing along weapons (ideally Assault Rifles), Blood Bags and grenades for this order. You may have to delay actually completing the order to ensure you&#x27;re fully stocked. When it comes to fighting the Mysterious Man, full on combat is a little easier than stealth. You can ignore his minions if you wish, but defeating them may make the battle easier. This battle is divided into roughly five phases and you should focus on attacking the Mysterious Man directly as much as possible.</span></div><div class="row"><span class="lbl">Unlocks</span><span class="val unlocks">690 Likes as a base reward, with 360 Additional Likes if Sam damage is 150% or less.</span></div></div></li>
+</ol>
+</div></section>
+
+<section class="area" id="e06">
+<div class="area-head"><span class="chev">&#10095;</span>
+<div class="titles"><div class="eyebrow">Episode</div><h2>Episode 6 Chrysalis</h2></div>
+<div class="area-meta"><div class="tags"><span class="tag">Orders 18–23</span><span class="tag count">6</span></div><div class="aprog"><div class="track"><div class="fill"></div></div><span class="num">0/0</span></div></div></div>
+<div class="area-body">
+<ol class="orders">
+<li><span class="onum">Order 18</span><span class="otitle"><span class="mod">[Hazardous]</span> Recover All Weapon Sets and Burrowing Bombs Stolen by the</span><div class="odetail"><div class="row"><span class="lbl">Objective</span><span class="val">Find all of the weapon sets in the bandit camp 400 metres southwest of the Northern Environmental Observatory.</span></div><div class="row"><span class="lbl">Tips</span><span class="val">While you don&#x27;t have to kill every brigand in the camp, it will make it easier to obtain the stolen goods. Both stealth and open combat are good options here, so just make sure you&#x27;ve got enough weapons and Blood Bags. Using L1 will help you find the weapon set and you may find it easier to collect them after defeating all of the enemies.</span></div><div class="row"><span class="lbl">Unlocks</span><span class="val unlocks">Unlocks Guidepost (Two Stars) and 80-metre bridge (Two Stars). 15 APAS Memory Enhancement Points (Two Stars). 260 Likes as a base reward, with 550 Additional Likes if average content damage is 5% or less.</span></div><p class="order-note">Brigands</p></div></li>
+<li><span class="onum">Order 19</span><span class="otitle"><span class="mod">[Do Not Submerge]</span> Deliver Necrobiotes to the F2 South Distribution Center</span><div class="odetail"><div class="row"><span class="lbl">Objective</span><span class="val">Deliver Necrobiotes (weigh 44kg) to the F2 South Distribution Center, which is 1,316 metres from the Observatory.</span></div><div class="row"><span class="lbl">Tips</span><span class="val">As the order title suggests, you can not let the cargo get wet. This means water is your main enemy, not the BTs you encounter. We recommend using the Pickup Off-Roader for this mission as it can make it across the rivers you encounter. You could also try building a bridge if you&#x27;re worried about the cargo.</span></div><div class="row"><span class="lbl">Unlocks</span><span class="val unlocks">Unlocks Combat Boots, Sticky Cannon and Heavy Machine Gun. 20 APAS Memory Enhancement Points. 240 Likes as a base reward, with 150 Additional Likes for content damage 5% or less.</span></div></div></li>
+<li><span class="onum">Order 20</span><span class="otitle">Deliver All Aid Packages and Chiral Printer Parts to F1</span><div class="odetail"><div class="row"><span class="lbl">Objective</span><span class="val">Deliver Chiral Printer Parts and 16 Aid Packages (total weight 355kg) to F1, which is nearly 3,000 metres away.</span></div><div class="row"><span class="lbl">Tips</span><span class="val">The best way to complete this order is to use the Pickup Off-Roader and then head to the monorail near the mine, which is 1,800 metres from F2. Once there, remember to load your cargo and vehicle on the monorail before heading out. (Or else you&#x27;ll have to come back for them.)</span></div><div class="row"><span class="lbl">Unlocks</span><span class="val unlocks">Unlocks Famous Men Song. 720 Likes as a base reward, with 100 Additional Likes for average content damage 5% or less</span></div></div></li>
+<li><span class="onum">Order 21</span><span class="otitle">Rescue the Dowser&#x27;s Friend from the Armer Survivalists</span><div class="odetail"><div class="row"><span class="lbl">Objective</span><span class="val">Rescue The Dowser&#x27;s friend from bandit camp 1,232 metres away before returning to The Dowser.</span></div><div class="row"><span class="lbl">Tips</span><span class="val">Stealth is not an option here (unless you&#x27;re really good at it and quite lucky). This is because the bandits are equipped with vehicles, which makes them difficult to avoid and quite deadly if they do hit you. We recommend avoiding combat as much as possible and instead focusing on your rescue mission - heading straight to the person you need to find and running over any foes with your vehicle. If you do want to fight, then the sniper rifle will come in handy.</span></div><div class="row"><span class="lbl">Unlocks</span><span class="val unlocks">Unlocks PCC Lvl 2, Zip-Line, Boost Skeleton and Give Up Song. 20 APAS Memory Enhancement Points. 272 Likes as a base reward, with 630 Additional Likes for The Dowser&#x27;s Friend damage 5% or less.</span></div></div></li>
+<li><span class="onum">Order 22</span><span class="otitle">Search for Tomorrow</span><div class="odetail"><div class="row"><span class="lbl">Objective</span><span class="val">Find Tomorrow and defeat the Ghost Mechs.</span></div><div class="row"><span class="lbl">Tips</span><span class="val">First, make sure you bring Blood Bags, weapons and MP bullets. To find Tomorrow you need to use the scanner (L1 button) and follow the purple footprints. Keep doing this until you&#x27;re sent a marker for a location before heading there. You will get other markers and will have to cross a number of rivers on your journey. You will eventually have to defeat the Ghost Mechs. It&#x27;s best to focus on using range attacks during this fight until one drops a Ghost Blade. (It&#x27;s very effective.)</span></div><div class="row"><span class="lbl">Unlocks</span><span class="val unlocks">Unlocks Tmrrw Song and To the Wilder Piano Version Song. 600 Likes as a base reward, with 480 Additional Likes for Search for Tomorrow completion.</span></div></div></li>
+<li><span class="onum">Order 23</span><span class="otitle"><span class="mod">[Breakable Cargo]</span> Deliver Tar Magnetite to Heartman&#x27;s Lab</span><div class="odetail"><div class="row"><span class="lbl">Objective</span><span class="val">Deliver Tar Magnetite (weighs 59kg) to Heartman&#x27;s Lab, which is 1,445 metres southeast of The Dowser&#x27;s base.</span></div><div class="row"><span class="lbl">Tips</span><span class="val">You need to navigate mountainous terrain for this order, so look out for rocks and steep cliffs. It&#x27;s possible to walk or take a vehicle, so pick your preferred method. You may find it easier to reach the lab by following the shore line. Be careful no matter what route you take - your cargo is breakable!</span></div><div class="row"><span class="lbl">Unlocks</span><span class="val unlocks">Unlocks Extra Battery Lvl 1, Jump Ramp, Sae House and Cliffhanger Song. 20 APAS Memory Enhancement Points. 250 Likes as a base reward, with 55 Additional Likes for contents damage 5% or less.</span></div></div></li>
+</ol>
+</div></section>
+
+<section class="area" id="e07">
+<div class="area-head"><span class="chev">&#10095;</span>
+<div class="titles"><div class="eyebrow">Episode</div><h2>Episode 7 Pod</h2></div>
+<div class="area-meta"><div class="tags"><span class="tag">Orders 24–30</span><span class="tag count">7</span></div><div class="aprog"><div class="track"><div class="fill"></div></div><span class="num">0/0</span></div></div></div>
+<div class="area-body">
+<ol class="orders">
+<li><span class="onum">Order 24</span><span class="otitle"><span class="mod">[Chilled]</span> Deliver the Beach Yeast to the Pizza Chef</span><div class="odetail"><div class="row"><span class="lbl">Objective</span><span class="val">Deliver the Beach Yeast to the Pizza Chef who is 790 metres south of Heartman&#x27;s Lab.</span></div><div class="row"><span class="lbl">Tips</span><span class="val">The Beach Yeast must remain cool, so letting it get hot is out of the question. The easiest way to ensure this is to wait for night in your private room in the Magellan. Without any sun, there&#x27;s no heat! Though you may find it a little harder to navigate, so, if you prefer travelling through the day, you&#x27;ll need to be quick so put the yeast into the Pickup Off- Roader and go as fast as you can. The terrain itself is quite mountainous and you&#x27;ll want to try your best to avoid the bandit camp. Watch out for the traps around the camp as well!</span></div><div class="row"><span class="lbl">Unlocks</span><span class="val unlocks">Unlocks Machine Gun MP Lvl 1. 20 APAS Memory Enhancement Points. 230 Likes as a base reward, with 150 Additional Likes for contents damage 5% or less.</span></div></div></li>
+<li><span class="onum">Order 25</span><span class="otitle"><span class="mod">[Keep Flat / Express]</span> Deliver a Piping Hot Pizza to the Data Scientist</span><div class="odetail"><div class="row"><span class="lbl">Objective</span><span class="val">Deliver the pizza to the Data Scientist who is 1,200 roughly northeast of the Pizza Chef.</span></div><div class="row"><span class="lbl">Tips</span><span class="val">You have 10 minutes to complete this order, so it&#x27;s best to use the Tri-Cruiser. Make sure you avoid the chiral monsters and boost through them if possible (or less they might short circuit your vehicle). Otherwise, it&#x27;s a matter of avoiding the rocks.</span></div><div class="row"><span class="lbl">Unlocks</span><span class="val unlocks">Unlocks Porter Suit: AI Camo, Sneaking Boots and SL-LW Assault Rifle MP Lvl 1. 20 APAS Memory Enhancement Points. 240 Likes as a base reward, with 190 Additional Likes for being within 10 minutes and contents damage 5% or less.</span></div></div></li>
+<li><span class="onum">Order 26</span><span class="otitle">Recover Old BB Pod from the Armed Survivalists&#x27; Base</span><div class="odetail"><div class="row"><span class="lbl">Objective</span><span class="val">Collect the Old BB Pod from the bandit camp 750 metres from the Data Scientist. Next, travel to the Motherhood Base 800 metres north and then the Motherhood Base door passcode.</span></div><div class="row"><span class="lbl">Tips</span><span class="val">You can either use combat to reach the Old BB Pod or engage your stealth skills to reach it without being noticed. You&#x27;ll have to deal with traps no matter which method you choose though. It&#x27;s also possible to steal a vehicle from the camp for your escape.</span></div><div class="row"><span class="lbl">Unlocks</span><span class="val unlocks">Unlocks Rome Song. 20 APAS Memory Enhancement Points. 230 Likes as a base reward, with 490 Additional Like for contents damage 5% or less.</span></div></div></li>
+<li><span class="onum">Order 27</span><span class="otitle">Deliver All Tar Dissolvent to the DHV Magellan</span><div class="odetail"><div class="row"><span class="lbl">Objective</span><span class="val">Return to F2 before heading back 4,100 metres to the Motherhood base to deliver Tar Dissolvent (total weight 168kg).</span></div><div class="row"><span class="lbl">Tips</span><span class="val">Use a Transponder to return to F2 unless you want to walk. Use a Pickup Off-Roader for the return trip. We recommend heading northeast towards The Dowser&#x27;s base as this will help you avoid a bandit camp. You&#x27;ll encounter this camp if you head through the tunnel east of F2.</span></div><div class="row"><span class="lbl">Unlocks</span><span class="val unlocks">315 Likes as a base reward, with 160 Additional Likes for contents damage 5% or less.</span></div></div></li>
+<li><span class="onum">Order 28</span><span class="otitle">Extract Weapons Fabricators Data using Ring Terminal Expansion</span><div class="odetail"><div class="row"><span class="lbl">Objective</span><span class="val">Travel 1,609 metres southwest of the DHV Magellan, carrying the Ring Terminal Device (weighs 10kg), and defeat enemies before extracting data.</span></div><div class="row"><span class="lbl">Tips</span><span class="val">Make sure you bring Blood Bags, Grenades and Assault Rifle MPs along for this mission, because, once you&#x27;re free of the sandstorms, you&#x27;ll encounter a group of Red Ghost Mechs. It&#x27;s best to defeat these Mechs before heading inside to extract the data.</span></div><div class="row"><span class="lbl">Unlocks</span><span class="val unlocks">Unlocks Geese Song. 430 Likes as a base reward, with 700 Additional Likes for damage taken 100% or less and contents damage 5% or less.</span></div></div></li>
+<li><span class="onum">Order 29</span><span class="otitle">Recover the Coffin from Armed Survivalists Base</span><div class="odetail"><div class="row"><span class="lbl">Objective</span><span class="val">Travel 1,125 metres southwest of Motherhood and get the Coffin from the camp before heading to The Mechanic 1,275 metres away.</span></div><div class="row"><span class="lbl">Tips</span><span class="val">There are three ways to retrieve the Coffin from the tent in the middle of the base - kill everyone, stealth your way through or make a mad dash through the camp and grab it before running away. The Pickup Off-Roader is, once again, your vehicle of choice for this journey.</span></div><div class="row"><span class="lbl">Unlocks</span><span class="val unlocks">Unlocks Coffin Board, Let&#x27;s Not Say Another Word Song and DHV Magellan colour customization. 20 APAS Memory Enhancement Points. 260 Likes as a base reward, with 250 Additional Likes for contents damage 5% or less.</span></div></div></li>
+<li><span class="onum">Order 30</span><span class="otitle">Deliver All Prototype Life Support Systems to F4</span><div class="odetail"><div class="row"><span class="lbl">Objective</span><span class="val">Travel 7,000 metres east from F1 to F4 carrying Life Support System Prototypes (165kg total weight).</span></div><div class="row"><span class="lbl">Tips</span><span class="val">This is going to be an incredibly long journey and you&#x27;re going to need a vehicle, so it&#x27;s Pickup Off-Roader time once again. The route you take is completely up to you, but at some point you&#x27;re going to hit a huge river. We recommend building a bridge across, because it&#x27;s safer than driving across and can be used later.</span></div><div class="row"><span class="lbl">Unlocks</span><span class="val unlocks">Unlocks Bokka Skeleton Lvl 1, TTL-02 Sunglasses and The Bride and Bachelor Song. 20 APAS Memory Enhancement Points. 450 Likes as a base reward, with 100 Additional Likes for damage 5% or less.</span></div></div></li>
+</ol>
+</div></section>
+
+<section class="area" id="e08">
+<div class="area-head"><span class="chev">&#10095;</span>
+<div class="titles"><div class="eyebrow">Episode</div><h2>Episode 8 Deluge</h2></div>
+<div class="area-meta"><div class="tags"><span class="tag">Orders 31–37</span><span class="tag count">7</span></div><div class="aprog"><div class="track"><div class="fill"></div></div><span class="num">0/0</span></div></div></div>
+<div class="area-body">
+<ol class="orders">
+<li><span class="onum">Order 31</span><span class="otitle">Escape from the Strange Realm</span><div class="odetail"><div class="row"><span class="lbl">Objective</span><span class="val">Defeat the Mysterious Man. Again.</span></div><div class="row"><span class="lbl">Tips</span><span class="val">When it comes to gear, you&#x27;ll want the Battle Skeleton, lots of Blood Bags, a few Assault Rifle MPs and a Shotgun. Fighting the Mysterious Man works exactly the same as the previous fight - shoot at him until he teleports and then repeat the process. Use your increased jump height to your advantage and destroy the ice pillars when they appear.</span></div><div class="row"><span class="lbl">Unlocks</span><span class="val unlocks">760 Likes as a base reward, with 320 Additional Likes for Sam damage 150% or less.</span></div></div></li>
+<li><span class="onum">Order 32</span><span class="otitle">Deliver the Cryptobiote Variants to The Chronobiologist</span><div class="odetail"><div class="row"><span class="lbl">Objective</span><span class="val">Deliver the Cryptobiote Variants (weighs 69kg) to The Chronobiologist who is located 2,311 metres west of F4.</span></div><div class="row"><span class="lbl">Tips</span><span class="val">Your cargo can not be submerged, so don&#x27;t even think about going into any form of water. With this in mind, you can either take the mountainous route while tackling BTs or take the long way round by heading to the river north of F4 and following it westward. You&#x27;ll still have to avoid some BTs, but it will lead to a smoother route when you do begin your mountain ascent.</span></div><div class="row"><span class="lbl">Unlocks</span><span class="val unlocks">Unlocks Are You Leaving Song and Accessory. 20 APAS Memory Enhancement Points. 276 Likes a base reward, with 65 Additional Likes for contents damage 5% or less.</span></div></div></li>
+<li><span class="onum">Order 33</span><span class="otitle">Deliver Timefall-Ressitant Emu to The Metagenomicist</span><div class="odetail"><div class="row"><span class="lbl">Objective</span><span class="val">Find the emu 950 metres north of The Chronobiologist before transporting it 2,000 metres southwest to the Metagenomiscist.</span></div><div class="row"><span class="lbl">Tips</span><span class="val">Use the L1 scanner to find the emu and learn its movement pattern. This will help you sneak up on it and capture it! It&#x27;s possible to avoid the river you encounter by heading west around its edge.</span></div><div class="row"><span class="lbl">Unlocks</span><span class="val unlocks">Unlocks EX Capture Grenade and Afraid Song. 20 APAS Memory Enhancement Points. 286 Likes as a base reward, with 150 Additional Likes for emu damage 5% or less.</span></div></div></li>
+<li><span class="onum">Order 34</span><span class="otitle">Deliver Chiral Microbes to F5 East Distribution Center</span><div class="odetail"><div class="row"><span class="lbl">Objective</span><span class="val">Deliver Chiral Microbes (weighs 45kg) to F5, which is 1,600 metres south.</span></div><div class="row"><span class="lbl">Tips</span><span class="val">Make sure you avoid the tar pit and the two BT swarms. You can technically go through the BTs swarms, but it&#x27;s best to avoid them completely by driving around their edges. Just make sure you&#x27;re keeping an eye out for the cliffs. (And yes, it&#x27;s a good idea to bring a vehicle as always.)</span></div><div class="row"><span class="lbl">Unlocks</span><span class="val unlocks">Unlocks Porter Suit: Junji Ito, Grenade Launcher MP and Cargo Catapult. 20 APAS Memory Enhancement Points. 330 Likes as a base reward, with 100 Additional Likes for contents damage 5% or less.</span></div></div></li>
+<li><span class="onum">Order 35</span><span class="otitle">Extract Data from Mech Fabricators using Ring Terminal</span><div class="odetail"><div class="row"><span class="lbl">Objective</span><span class="val">Travel to the factory 800 metres south of F5, defeat all the mechs and destroy the four fabricators - two on the first floor, two on the second</span></div><div class="row"><span class="lbl">Tips</span><span class="val">You must defeat all of the mechs for this Order, so bring your Assault Rifle MPs (three is a good number), some Blood Bags and maybe a grenade or two. You can still use a little bit of stealth to get the drop on an enemy, but you will need to defeat everyone. If you have a Ghost Blade, now is the time to use it.</span></div><div class="row"><span class="lbl">Unlocks</span><span class="val unlocks">550 Likes as a base reward, with 1,400 Additional Likes for contents damage 5% or less and Sam damage 100% or less.</span></div></div></li>
+<li><span class="onum">Order 36</span><span class="otitle">Cross snowy peaks to deliver Meteorite to Adventurer</span><div class="odetail"><div class="row"><span class="lbl">Objective</span><span class="val">Deliver Meteorite (weighs 180kg) to The Adventurer crossing snowy, mountainous, terrain.</span></div><div class="row"><span class="lbl">Tips</span><span class="val">You must use a Pick Off-Roader for this mission, because you&#x27;re carrying hazardous cargo. (If it gets broken, Sam gets gassed.) The best route to The Adventurer is to go south to the mech factory from Order 35 and then east along the coast. It still won&#x27;t be the easiest of journeys, but it&#x27;s the best route available to you.</span></div><div class="row"><span class="lbl">Unlocks</span><span class="val unlocks">314 Likes as a base reward, with 115 Additional Likes for contents damage 5% or less.</span></div></div></li>
+<li><span class="onum">Order 37</span><span class="otitle">Rescue The Adventurer from the snowy mountains</span><div class="odetail"><div class="row"><span class="lbl">Objective</span><span class="val">Find The Adventurer roughly 715 metres away from his base and then take him home.</span></div><div class="row"><span class="lbl">Tips</span><span class="val">We recommend completing Order 37 straight after Order 36 as it will prevent you from having to return to The Adventurer&#x27;s base. You&#x27;re going to need Ladders and Climbing Anchors. Alongside this, make sure you&#x27;re using the L1 scanner to find The Adventurer and for keeping an eye on what terrain is safe. If you want to use a vehicle, then you&#x27;ll need the Tri-Cruiser</span></div><div class="row"><span class="lbl">Unlocks</span><span class="val unlocks">Unlocks Climbing Power Gloves Lvl 1 and Patience Song. 20 APAS Memory Enhancement Points. 446 Likes as a base reward, with 105 Additional Likes for Adventurer damage 5% or less.</span></div></div></li>
+</ol>
+</div></section>
+
+<section class="area" id="e09">
+<div class="area-head"><span class="chev">&#10095;</span>
+<div class="titles"><div class="eyebrow">Episode</div><h2>Episode 9 Puppets</h2></div>
+<div class="area-meta"><div class="tags"><span class="tag">Orders 38–43</span><span class="tag count">6</span></div><div class="aprog"><div class="track"><div class="fill"></div></div><span class="num">0/0</span></div></div></div>
+<div class="area-body">
+<ol class="orders">
+<li><span class="onum">Order 38</span><span class="otitle">Deliver Chiral Decontaminators and Sedatives to Eastern Environmental</span><div class="odetail"><div class="row"><span class="lbl">Objective</span><span class="val">Transport Chiral Decontaminators and Sedatives (111.7kg total weight) across 1,500 metres to the Eastern Environmental Observatory.</span></div><div class="row"><span class="lbl">Tips</span><span class="val">The path ahead is full of BTs, steep cliffs and a snowy landscape, so plot your route carefully. You can speed up the journey slightly by using the DHV Magellan to fast travel to The Chronobiologist, but you&#x27;ll still need to have your guard up.</span></div><div class="row"><span class="lbl">Unlocks</span><span class="val unlocks">Unlock Oxygen Mask and Little Nest Song. 20 APAS Memory Enhancement Points. 131 Likes as a base reward.</span></div><p class="order-note">Observatory</p></div></li>
+<li><span class="onum">Order 39</span><span class="otitle">Destroy the Giant Ghost Mech</span><div class="odetail"><div class="row"><span class="lbl">Objective</span><span class="val">Defeat the Giant Ghost Mech.</span></div><div class="row"><span class="lbl">Tips</span><span class="val">We recommend bringing Blood Bags, Assault Rifle MPs, Grenade Launcher MPs and wearing a Battle Skeleton. When it comes to defeating the Giant Ghost Mech, you&#x27;ll want to aim for its tentacle joints and ensure you&#x27;re avoiding the missiles it sends out. It also has a new laser attack you&#x27;ll want to keep an eye out for and has the ability to shoot out a tar orb.</span></div><div class="row"><span class="lbl">Unlocks</span><span class="val unlocks">1,010 Likes as a base reward, with 200 Additional Likes for DHV Magellan damage taken 50% or less and Sam damage 100% or less.</span></div></div></li>
+<li><span class="onum">Order 40</span><span class="otitle">Recover All Stranded Cargo</span><div class="odetail"><div class="row"><span class="lbl">Objective</span><span class="val">Collect the three pieces of Stranded Cargo roughly 969 metres from the DHV Magellan&#x27;s current location. Afterwards, visit The Phantom Smith - roughly 1,300 metres south.</span></div><div class="row"><span class="lbl">Tips</span><span class="val">The cargo you&#x27;re collecting is breakable, so make sure you are careful as you collect it. Don&#x27;t let Sam or your vehicle get hit by anything while carrying it! Make sure you&#x27;re avoiding the steep cliffs and consider using a Transponder for fast travelling if needs be.</span></div><div class="row"><span class="lbl">Unlocks</span><span class="val unlocks">Unlocks Chiral Shock Cannon and Hope Song. 20 APAS Memory Enhancement Points. 210 Likes as a base reward, with 100 Additional Likes for content damage 5% or less.</span></div></div></li>
+<li><span class="onum">Order 41</span><span class="otitle">Deliver the Chiral Field Controller Prototypes to F6</span><div class="odetail"><div class="row"><span class="lbl">Objective</span><span class="val">Transport Chiral Field Controller Prototypes (275kg total weight) 2,200 metres to F6.</span></div><div class="row"><span class="lbl">Tips</span><span class="val">There will be a bandit camp towards the end of your journey, so best to decide whether you&#x27;re fighting or avoiding these foes before heading out. Other than this, it&#x27;s best to use a Pick Off-Roader for this Order.</span></div><div class="row"><span class="lbl">Unlocks</span><span class="val unlocks">Unlocks Chiral Cannon, Spiked Tires for slopes and Asylums For The Feeling feat. Leila Adu Song. 20 APAS Memory Enhancement Points. 460 Likes as a base reward, with 100 Additional Likes content damage 5% or less.</span></div></div></li>
+<li><span class="onum">Order 42</span><span class="otitle">Deliver Chiral Cyclotron Parts and Special Materials to DHV Magellan</span><div class="odetail"><div class="row"><span class="lbl">Objective</span><span class="val">Travel 2,000 metres northwest from F6 to DHV Magaellan to transport the Chiral Cyclotron Parts and Special Materials (total weight 650kg).</span></div><div class="row"><span class="lbl">Tips</span><span class="val">Using the Pickup Off-Road is a necessity, not an option, for this order. Due to the massive weight of cargo you&#x27;re carrying, it&#x27;s best to avoid any fights. This includes doing your best to avoid the BT swarm you&#x27;ll encounter and, later on, the bandit camp.</span></div><div class="row"><span class="lbl">Unlocks</span><span class="val unlocks">920 Likes as a base reward, with 100 Additional Likes with content damage 5% or less.</span></div></div></li>
+<li><span class="onum">Order 43</span><span class="otitle">Destroy the Chiral Jammers Threat to Southern Environmental Observatory</span><div class="odetail"><div class="row"><span class="lbl">Objective</span><span class="val">Destroy the Chiral Jammers at the bandit camp 700 metres south of the Magellan before traveling 1000 metres south to the Southern Environmental Observatory.</span></div><div class="row"><span class="lbl">Tips</span><span class="val">We recommend defeating every enemy in this camp as it will make this Order easier to complete. (Sure, you can use stealth but it will be tricky.) As always, try to take out the watchtower first as it will combat easier overall. One Chiral Jammer can be found near the watchtower in the middle of the camp, the other slightly down the slope from the camp. Be prepared to face some Ghost Mechs when you arrive at the Observatory.</span></div><div class="row"><span class="lbl">Unlocks</span><span class="val unlocks">20 APAS Memory Enhancement Points. 840 Likes as a base reward, with Sam damage taken 100% or less.</span></div></div></li>
+</ol>
+</div></section>
+
+<section class="area" id="e10">
+<div class="area-head"><span class="chev">&#10095;</span>
+<div class="titles"><div class="eyebrow">Episode</div><h2>Episode 10 Isolation</h2></div>
+<div class="area-meta"><div class="tags"><span class="tag">Order 44</span><span class="tag count">1</span></div><div class="aprog"><div class="track"><div class="fill"></div></div><span class="num">0/0</span></div></div></div>
+<div class="area-body">
+<ol class="orders">
+<li><span class="onum">Order 44</span><span class="otitle">Deliver Network Stabilizer to F7 North Distribution Center</span><div class="odetail"><div class="row"><span class="lbl">Objective</span><span class="val">Travel 4,000 metres south from Heartman&#x27;s Lab to F7 to deliver the Network Stabilizer (weighs 35kg).</span></div><div class="row"><span class="lbl">Tips</span><span class="val">We recommend using the Tri-Cruiser for this order and taking a long, but safe, route. A potential route is following the river east before journeying south past F4. You can then either continue heading south or go west across the mountains to reach F7.</span></div><div class="row"><span class="lbl">Unlocks</span><span class="val unlocks">Unlocks Quadruple Rocket Launcher and Without You Song. 20 APAS Memory Enhancement Points. 462 Likes as a base reward, with 200 Additional Likes for content damage 5% or less.</span></div></div></li>
+</ol>
+</div></section>
+
+<section class="area" id="e11">
+<div class="area-head"><span class="chev">&#10095;</span>
+<div class="titles"><div class="eyebrow">Episode</div><h2>Episode 11 Quake</h2></div>
+<div class="area-meta"><div class="tags"><span class="tag">Order 45</span><span class="tag count">1</span></div><div class="aprog"><div class="track"><div class="fill"></div></div><span class="num">0/0</span></div></div></div>
+<div class="area-body">
+<ol class="orders">
+<li><span class="onum">Order 45</span><span class="otitle">Return from the Strange Realm</span><div class="odetail"><div class="row"><span class="lbl">Objective</span><span class="val">Defeat the Mysterious Man (Neil Vana) for the third time.</span></div><div class="row"><span class="lbl">Tips</span><span class="val">Pick your best weapons! We recommend Assault Rifles MP and some Quadruple Rocket Launchers. Don&#x27;t forget those Blood Bags either. Like your previous fights with the Mysterious Man - shoot him until he teleports, find him, shoot him again. Be aware that he will try to ambush you during the train segment. He will also teleport a little more freely, but over short distances, in the final stage of the fight.</span></div><div class="row"><span class="lbl">Unlocks</span><span class="val unlocks">1,150 Likes, with 200 Additional Likes for Sam damage 300% or less.</span></div></div></li>
+</ol>
+</div></section>
+
+<section class="area" id="e12">
+<div class="area-head"><span class="chev">&#10095;</span>
+<div class="titles"><div class="eyebrow">Episode</div><h2>Episode 12 Fragile</h2></div>
+<div class="area-meta"><div class="tags"><span class="tag">Order 46</span><span class="tag count">1</span></div><div class="aprog"><div class="track"><div class="fill"></div></div><span class="num">0/0</span></div></div></div>
+<div class="area-body">
+<ol class="orders">
+<li><span class="onum">Order 46</span><span class="otitle">Deliver the Drawbridge Terminal Unit to F8</span><div class="odetail"><div class="row"><span class="lbl">Objective</span><span class="val">Starting at the DHV Magaellan, travel 292 metres southwest to Waystation 1. From there, travel 600 metres southwest to Waystation 2. Finally, travel 1,100 southwest to F8 and defeat the Giant Ghost Mech.</span></div><div class="row"><span class="lbl">Tips</span><span class="val">Begin with getting your gear ready. You&#x27;ll ideally want Blood Bags, Assault Rifle MPs, a Quadruple Rocket Launcher and a Tri-Cruiser. Bear in mind that there is a time limit for the first two Waystations, so keep up the pace. Fight all of the Ghost Mechs you encounter between the Waystations, but feel free to ignore the ones on the bridge and at its entrance. The Giant Ghost Mech&#x27;s weak points remain the same - the eye and tentacle joints.</span></div><div class="row"><span class="lbl">Unlocks</span><span class="val unlocks">Unlocks Battle Guitar. 20 APAS Memory Enhancement Points. 1,300 Likes as a base reward, with 1,200 Additional Likes for contents damage 5% or less.</span></div></div></li>
+</ol>
+</div></section>
+
+<section class="area" id="e13">
+<div class="area-head"><span class="chev">&#10095;</span>
+<div class="titles"><div class="eyebrow">Episode</div><h2>Episode 13</h2></div>
+<div class="area-meta"><div class="tags"><span class="tag">No orders</span></div><div class="aprog"><div class="track"><div class="fill"></div></div><span class="num">0/0</span></div></div></div>
+<div class="area-body">
+<p class="ep-note">This Episode is a cutscene.</p>
+</div></section>
+
+<section class="area" id="e14">
+<div class="area-head"><span class="chev">&#10095;</span>
+<div class="titles"><div class="eyebrow">Episode</div><h2>Episode 14 Last Stranding</h2></div>
+<div class="area-meta"><div class="tags"><span class="tag">Order 47</span><span class="tag count">1</span></div><div class="aprog"><div class="track"><div class="fill"></div></div><span class="num">0/0</span></div></div></div>
+<div class="area-body">
+<ol class="orders">
+<li><span class="onum">Order 47</span><span class="otitle">Find Item with a Deep Connection to Higgs</span><div class="odetail"><div class="row"><span class="lbl">Objective</span><span class="val">Return to Sam&#x27;s Shelter by crossing Australia to the Mexico Plate Gate and then across Mexico. Defeating the Enormous BT along the way and finding the item with a &#x27;deep connection to Higgs&#x27; when he returns home.</span></div><div class="row"><span class="lbl">Tips</span><span class="val">First, we highly recommend making the Battle Guitar. It will serve you well going around and it&#x27;s worth the Chiral Crystals, even if you need to spend time collecting them. You&#x27;ll also want the Tri-Cruiser and some Blood Bags. When fighting the Enormous BT crab-thing, you can use the Battle Guitar for both ranged and melee attacks. Aim for its joints on its crab legs (they&#x27;ll glow orange), until you can target the orange orb on its head. If you&#x27;re having trouble finding the item in Sam&#x27;s Shelter, look in the kitchen drawers.</span></div><div class="row"><span class="lbl">Unlocks</span><span class="val unlocks">Unlocks To The Wilder Song, Not Around Song, Field Of Dreams Song and Chariot I Plead feat. Tim Smith Song. 720 Likes as a base reward, with 700 Additional Likes for search for a connected item.</span></div></div></li>
+</ol>
+</div></section>
+
+<section class="area" id="e15">
+<div class="area-head"><span class="chev">&#10095;</span>
+<div class="titles"><div class="eyebrow">Episode</div><h2>Episode 15 On the Beach &amp; Episode 16 Tomorrow</h2></div>
+<div class="area-meta"><div class="tags"><span class="tag">Order 48</span><span class="tag count">1</span></div><div class="aprog"><div class="track"><div class="fill"></div></div><span class="num">0/0</span></div></div></div>
+<div class="area-body">
+<ol class="orders">
+<li><span class="onum">Order 48</span><span class="otitle">Defeat Higgs and Save Tomorrow</span><div class="odetail"><div class="row"><span class="lbl">Objective</span><span class="val">Travel 900 metres to reach Tomorrow before defeating the Red Samurai. Finally, defeat Higgs.</span></div><div class="row"><span class="lbl">Tips</span><span class="val">Ignore the BTs when reaching Tomorrow. Use the Battle Guitars charged ranged attack to stun the Red Samurai. When fighting Higgs, use the L1 scanner to find him and watch out for his own Battle Guitar. Higgs will teleport, so it&#x27;s best to focus on using ranged attacks and doing your best to ignore any BTs. (You should also be prepared for some Street Fighter and Guitar Hero-styled action.)</span></div><div class="row"><span class="lbl">Unlocks</span><span class="val unlocks">1,500 Likes as a base reward, with 700 Additional Likes for Sam damage for 200% or less. Then 1,000 Likes as a base reward, with 100 Additional Likes automatically. Unlocks BB&#x27;s Theme Song, Fragile Things Song, To The Wilder feat. Elle Fanning Song, Red Mask, Golden Mask, Backpack Patch 41: Adult Cryptobiote, Tomorrow Like! Custom Hologram and Fragile Hologram.</span></div></div></li>
+</ol>
+</div></section>
+
+<section class="area" id="e16">
+<div class="area-head"><span class="chev">&#10095;</span>
+<div class="titles"><div class="eyebrow">Episode</div><h2>Episode 17 One Day</h2></div>
+<div class="area-meta"><div class="tags"><span class="tag">No orders</span></div><div class="aprog"><div class="track"><div class="fill"></div></div><span class="num">0/0</span></div></div></div>
+<div class="area-body">
+<p class="ep-note">freely explore the world and complete any left over side activities.</p>
+</div></section>
+<footer>Progress is saved in this browser &mdash; use Export / import to move it.</footer>
+</main>
+</div>
+<button id="jump">↓ Next unchecked</button>
+<dialog id="code-dlg">
+  <h3>Transfer progress</h3>
+  <p style="font-size:.9rem;color:var(--paper-dim)">Copy this code to move your progress to another device or browser, or paste one in and load it.</p>
+  <textarea id="code-box" spellcheck="false" aria-label="Progress code"></textarea>
+  <div class="row">
+    <button id="code-copy">Copy</button>
+    <button id="code-load">Load pasted code</button>
+    <button id="code-close">Close</button>
+  </div>
+</dialog>
+<script>
+(function(){
+"use strict";
+var KEY="ds2-orders-v1";
+var store={data:{},
+  load:function(){try{var r=localStorage.getItem(KEY);if(r)this.data=JSON.parse(r)||{}}catch(e){this.data={}}},
+  save:function(){try{localStorage.setItem(KEY,JSON.stringify(this.data))}catch(e){}},
+  clear:function(){this.data={};try{localStorage.removeItem(KEY)}catch(e){}}};
+store.load();
+
+function hash(str){var h=5381;for(var i=0;i<str.length;i++){h=((h<<5)+h+str.charCodeAt(i))|0;}return (h>>>0).toString(36);}
+
+var areas=Array.prototype.slice.call(document.querySelectorAll(".area"));
+var allBoxes=[],seen={};
+
+areas.forEach(function(area){
+  Array.prototype.slice.call(area.querySelectorAll("ol.orders")).forEach(function(list){
+    Array.prototype.slice.call(list.children).forEach(function(li){
+      var num=li.querySelector(".onum"), title=li.querySelector(".otitle");
+      var id=area.id+"-"+hash((num?num.textContent:"")+"|"+(title?title.textContent:""));
+      while(seen[id]){id+="x";}
+      seen[id]=1;
+      li.classList.add("check-item");
+      var input=document.createElement("input");
+      input.type="checkbox";input.dataset.id=id;
+      input.setAttribute("aria-label",(num?num.textContent+": ":"")+(title?title.textContent:""));
+      var node=document.createElement("span");
+      node.className="node";node.setAttribute("aria-hidden","true");
+      li.insertBefore(node,li.firstChild);
+      li.insertBefore(input,node);
+      function toggle(){input.checked=!input.checked;input.dispatchEvent(new Event("change",{bubbles:true}));}
+      node.addEventListener("click",toggle);
+      if(num)num.addEventListener("click",toggle);
+      if(title)title.addEventListener("click",function(e){if(e.target.closest("a"))return;toggle();});
+      if(store.data[id]){input.checked=true;li.classList.add("checked");}
+      input.addEventListener("change",function(){
+        li.classList.toggle("checked",input.checked);
+        if(input.checked)store.data[id]=1;else delete store.data[id];
+        store.save();update(area);updateOverall();});
+      allBoxes.push(input);
+    });
+  });
+});
+
+var toc=document.getElementById("toc");
+areas.forEach(function(area){
+  var li=document.createElement("li"),a=document.createElement("a");
+  a.href="#"+area.id;
+  a.innerHTML='<span class="t">'+area.querySelector("h2").textContent.trim()+'</span><span class="p">0%</span>';
+  a.addEventListener("click",function(){area.classList.remove("collapsed");syncAria(area);closeNav();});
+  li.appendChild(a);toc.appendChild(li);area._toc=a;
+});
+
+function update(area){
+  var tot=area.querySelectorAll('.check-item input').length,
+      done=area.querySelectorAll('.check-item.checked input').length;
+  var pct=tot?Math.round(done/tot*100):0;
+  area.querySelector(".aprog .fill").style.width=pct+"%";
+  area.querySelector(".aprog .num").textContent=tot?(done+"/"+tot):"\u2014";
+  area.classList.toggle("area-complete",tot>0&&done===tot);
+  if(area._toc){
+    area._toc.querySelector(".p").textContent=tot?(pct+"%"):"\u2014";
+    area._toc.classList.toggle("done",tot>0&&pct===100);
+  }
+}
+function updateOverall(){
+  var done=allBoxes.filter(function(b){return b.checked}).length,tot=allBoxes.length;
+  var pct=tot?Math.round(done/tot*100):0;
+  document.getElementById("overall-fill").style.width=pct+"%";
+  document.getElementById("overall-num").textContent=done+" / "+tot+" orders \u00b7 "+pct+"%";
+}
+areas.forEach(update);updateOverall();
+
+function syncAria(a){a.querySelector(".area-head").setAttribute("aria-expanded",String(!a.classList.contains("collapsed")));}
+areas.forEach(function(area){
+  var head=area.querySelector(".area-head");
+  head.setAttribute("role","button");head.setAttribute("tabindex","0");
+  syncAria(area);
+  function toggle(){area.classList.toggle("collapsed");syncAria(area);}
+  head.addEventListener("click",function(e){if(e.target.closest("a"))return;toggle();});
+  head.addEventListener("keydown",function(e){if(e.key==="Enter"||e.key===" "){e.preventDefault();toggle();}});
+});
+document.getElementById("expand-all").addEventListener("click",function(){areas.forEach(function(a){a.classList.remove("collapsed");syncAria(a)});});
+document.getElementById("collapse-all").addEventListener("click",function(){areas.forEach(function(a){a.classList.add("collapsed");syncAria(a)});});
+document.getElementById("hide-done").addEventListener("change",function(){document.body.classList.toggle("hide-done",this.checked);});
+document.getElementById("reset-all").addEventListener("click",function(){
+  if(!confirm("Reset all progress? This cannot be undone."))return;
+  store.clear();
+  allBoxes.forEach(function(b){b.checked=false;b.closest(".check-item").classList.remove("checked");});
+  areas.forEach(update);updateOverall();});
+
+var timer=null;
+document.getElementById("search").addEventListener("input",function(){
+  clearTimeout(timer);var q=this.value.trim().toLowerCase();
+  timer=setTimeout(function(){
+    areas.forEach(function(area){
+      var any=false;
+      area.querySelectorAll(".check-item").forEach(function(it){
+        var m=!q||it.textContent.toLowerCase().indexOf(q)!==-1;
+        it.classList.toggle("search-hide",!m);if(m)any=true;});
+      area.classList.toggle("search-empty",!!q&&!any&&area.querySelectorAll(".check-item").length>0);
+      if(q&&any)area.classList.remove("collapsed");
+      syncAria(area);});
+  },120);});
+
+document.getElementById("jump").addEventListener("click",function(){
+  var next=allBoxes.filter(function(b){return !b.checked})[0];
+  if(!next){alert("All 48 Orders complete. Keep on keeping on.");return;}
+  var area=next.closest(".area");
+  area.classList.remove("collapsed");syncAria(area);
+  var item=next.closest(".check-item");
+  item.scrollIntoView({block:"center",behavior:"smooth"});
+  item.classList.remove("flash");void item.offsetWidth;item.classList.add("flash");});
+
+var dlg=document.getElementById("code-dlg"),box=document.getElementById("code-box");
+document.getElementById("save-code").addEventListener("click",function(){
+  box.value=btoa(JSON.stringify(Object.keys(store.data)));
+  if(dlg.showModal)dlg.showModal();else alert(box.value);});
+document.getElementById("code-close").addEventListener("click",function(){dlg.close();});
+document.getElementById("code-copy").addEventListener("click",function(){
+  box.select();try{document.execCommand("copy")}catch(e){}
+  if(navigator.clipboard)navigator.clipboard.writeText(box.value).catch(function(){});});
+document.getElementById("code-load").addEventListener("click",function(){
+  var keys;
+  try{keys=JSON.parse(atob(box.value.trim()));}catch(e){alert("That code could not be read.");return;}
+  if(!Array.isArray(keys)){alert("That code could not be read.");return;}
+  store.data={};keys.forEach(function(k){store.data[k]=1;});store.save();
+  allBoxes.forEach(function(b){var on=!!store.data[b.dataset.id];b.checked=on;
+    b.closest(".check-item").classList.toggle("checked",on);});
+  areas.forEach(update);updateOverall();dlg.close();});
+
+function closeNav(){document.body.classList.remove("nav-open");}
+document.getElementById("menu-btn").addEventListener("click",function(){document.body.classList.toggle("nav-open");});
+document.getElementById("scrim").addEventListener("click",closeNav);
+document.addEventListener("keydown",function(e){if(e.key==="Escape")closeNav();});
+})();
+</script>
+</body>
+</html>
